@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css"
+    integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+<main class='card card-body'>
+    <h1 class="text-center">
+        {% load static %}
+        <img src="{% static 'imagen/logo2.png' %}" width="300" height="200">
+    </h1>
+    <h2>
+        <p class="text-center text-primary">Planea, Gestiona y Sigue Todas las Tareas con un Software Flexible. Una
+            Nueva
+            Forma Eficiente y Transparente de Organizar Todas las Tareas de Tu Empresa.</p>
+        {% load static %}
+        <img src="{% static 'imagen/Chimenea2.gif' %}" width="1235" height="380">
+    </h2>
+
+
+
+    <div class="text-center">
+        <a class="btn btn-dark" href="/i_sesion/">
+            Iniciar Sesión
+        </a>
+
+        <a class="btn btn-primary" href="/registro/">
+            Registrarse
+        </a>
+
+    </div>
+</main>
+
+
+{% endblock %}

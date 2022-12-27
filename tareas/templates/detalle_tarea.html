@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css"
+    integrity="sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh" crossorigin="anonymous">
+<h1 class="text-center">
+    {% load static %}
+    <img src="{% static 'imagen/logo2.png' %}" width="300" height="200">
+</h1>
+<main class="container">
+
+    <h1 class="display-5 text-center text-danger ">{{ tarea.titulo }}</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {{error}}
+        <p class="fw-bold">{{form.as_p}}</p>
+        {% csrf_token %}
+
+        <div class="btn-group" role="group" aria-label="Basic outlined example">
+            <button class="btn btn-outline-primary">Actualizar</button>
+    </form>
+
+    <form action="{% url 'tarea_completa' tarea.id %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-outline-success">Completado</button>
+    </form>
+
+    <form action="{% url 'tarea_eliminada' tarea.id %}" method="POST">
+        {% csrf_token %}
+        <button class="btn btn-outline-danger">Eliminar</button>
+    </form>
+
+</main>
+
+
+
+
+
+{% endblock %}
